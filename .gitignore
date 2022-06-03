@@ -1,3 +1,12 @@
+# Folders with simulation results
+Res*
+
+# Configuration files
+*.cfg
+
+# File for seting parameters
+set_params.py
+
 # Prerequisites
 *.d
 
@@ -6,10 +15,6 @@
 *.lo
 *.o
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
 
 # Compiled Dynamic libraries
 *.so
