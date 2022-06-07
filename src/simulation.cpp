@@ -68,14 +68,11 @@ Simulation::Simulation(int argc, char* argv[]) :
 	std:: cout << cellsX << " " << cellsY << " " << cellsZ << "\n";
 	std::cout << species[0].countInCell(2,2,2) << " "<< species[0].countInCell.size().transpose() << "\n";
 	Particle pp; 
-	pp.coord = Vector3d(0.06,0.06,0.06); //Vector3d(0.3,0.6,0.6)));
+	pp.coord = Vector3d(0.03,0.07,0.09); //Vector3d(0.3,0.6,0.6)));
+	pp.pulse = Vector3d(0.03,0.07,0.09); //Vector3d(0.3,0.6,0.6)));
 	species[0].add_particle_scatter(pp);
-		species[0].particlesData(4,5,6).emplace_back(Particle(Vector3d(0.07,0.06,0.06),Vector3d(1.,3,5)));
-		species[0].particlesData(1,1,1).emplace_back(Particle(Vector3d(0.07,0.06,0.06),Vector3d(1.,3,5)));
-	std::cout<< species[0].particlesData(1,1,1)(0) << "\n";
-	std::cout<< species[0].particlesData(1,1,1)(1) << "\n";
-	std::cout<< species[0].particlesData(4,5,6)(0) << "\n";
-
+	push(pp.coord, pp.pulse, 1, 1., 0.1, \
+		   E, B, currentDensity, dx, dt);
 
 }
 

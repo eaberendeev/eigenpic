@@ -63,6 +63,12 @@ inline int int_value(double dblValue)
 	return static_cast<int>(dblValue < 0 ? dblValue - 0.5 : dblValue + 0.5);
 }
 
+inline int iround(double x){
+    if ( x < 0 ) x -= 0.5;
+        else x += 0.5;
+    return (int) x;
+}
+
 
 void split_by_threads(int n, int ithr, int nthr, int& origin, int& split);
 

@@ -4,6 +4,11 @@ Res*
 # Configuration files
 *.cfg
 
+epic
+
+utils/__pycache__/
+utils/*.pyc
+
 # File for seting parameters
 set_params.py
 

@@ -12,7 +12,8 @@ using namespace std;
 
 //init general physical values for the simulation
 void Simulation::init_parameters() {
-	double dt  = parameters.at("Dt");
+	dt  = parameters.at("Dt");
+	dx  = parameters.at("Dt");
 	long maxTimestep = parameters.at("MaxTime") / dt + 1;
 
 	std::stringstream ss;

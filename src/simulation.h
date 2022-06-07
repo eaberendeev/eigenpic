@@ -60,7 +60,9 @@ class Simulation {
 		inline int vindg(int x, int y, int z, int c) const {
 			return(ind(x + ghostCells[0], y + ghostCells[1], z + ghostCells[2], c, totalSize[0], totalSize[1], totalSize[2], 3));
 		}
-
+		inline int vind(int x, int y, int z, int c) const {
+			return(ind(x, y, z, c, totalSize[0], totalSize[1], totalSize[2], 3));
+		}
 	public:
 		Simulation(int argc, char* argv[]);
 		void make_all();
@@ -68,7 +70,8 @@ class Simulation {
 		void stencil_identity();
 		void init_particles(const std::string& fParamsName);
 		void init_parameters();
-
+		void push(Vector3d& coord, Vector3d& puls, long q, double mass, double mpw, \
+		   const Field& fieldE, const Field& fieldB, Field& currentDensity, double _dx, double _dt);
 	private:
 		std::unordered_map<std::string, double> load_parameters(const std::string& fParamsName) const;
 };

@@ -13,14 +13,20 @@ std::ostream& operator<<(std::ostream& out, const ParticleSimple& particle){
 ParticlesArray::ParticlesArray(int nx, int ny, int nz, 
         const std::unordered_map<std::string, double> parameters, const std::vector<std::string>& vecStringPartParams):
     particlesData(nx,ny,nz), 
-    countInCell(nx,ny,nz){
+    countInCell(nx,ny,nz),chargeDensityOnGrid(nx,ny,nz){
     _ppc = int_value(parameters.at("NumPartPerCell"));
     _dx = parameters.at("Dx");
     for (const auto& line: vecStringPartParams){
         set_params_from_string(line);
     }
-
-    std::cout << "dfgvs\n";
+        for (auto i = 0; i < nx;i++){
+            for (auto j = 0; j < ny;j++){
+                for (auto k = 0; k < nz;k++){
+                    countInCell(i,j,k) = 0;
+                    chargeDensityOnGrid(i,j,k) = 0.;
+                }
+            }
+        }  
 }
 
 void ParticlesArray::set_params_from_string(const std::string& line){

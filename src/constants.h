@@ -1,10 +1,17 @@
-// Author: Andreas Kempf, Ruhr-Universitaet Bochum, ank@tp4.rub.de
-// (c) 2014, for licensing details see the LICENSE file
+// Author: Evgeny Berendeev
+// Budker Institute of Nuclear Physics of Siberian Branch Russian Academy of Sciences
+// beren@inp.nsk.su
+// (c) 2022, for licensing details see the LICENSE file
 
 #pragma once
 
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
+
+
+const int SMAX = 4;
+const int CELLS_SHIFT = 1;
+
 
 //Physical constants
 namespace CGS

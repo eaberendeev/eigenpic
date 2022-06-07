@@ -25,11 +25,17 @@ struct ParticleSimple{
 
 typedef ParticleSimple Particle;
 
+
+
+void push(Vector3d& coord, Vector3d& puls, long q, double mass, double mpw, \
+           const Field& fieldE, const Field& fieldB, Field& currentDensity, double _dx, double _dt);
+
 class ParticlesArray{
 
 public:
     Array3D<Array<Particle> > particlesData;
     Array3D<int> countInCell;
+    Array3D<double> chargeDensityOnGrid;
 
     void add_particle_scatter(const Particle& particle){
         auto i = int(particle.coord[0] / _dx);
